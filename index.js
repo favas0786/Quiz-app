@@ -38,4 +38,22 @@ const questions = [
 ];
 
 
-const questionElement = document.getElementById("question")
+const questionElement = document.getElementById("question");
+const answerBtn = document.getElementById("answer-buttons");
+const nextBtn = document.getElementById("next-btn");
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+function startQuiz(){
+    currentQuestionIndex = 0;
+    score = 0;
+    nextBtn.innerHTML = "Next";
+    showQuestion();
+}
+
+function showQuestion(){
+    let currentQuestionIndex = questions[currentQuestionIndex];
+    let questionNo = currentQuestionIndex + 1;
+    questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+}
